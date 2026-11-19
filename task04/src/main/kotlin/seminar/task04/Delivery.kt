@@ -18,7 +18,7 @@ abstract class Delivery(
 class Pickup (destination: String)
        : Delivery(destination) {
     override fun cost(weightKg: Int): Int {
-        require(weightKg > 0)
+        require(weightKg >= 0)
         return 0
     }
 
