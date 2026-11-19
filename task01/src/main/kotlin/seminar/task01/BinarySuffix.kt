@@ -14,5 +14,5 @@ fun transform(n: Int): Int {
 
 
 fun maxNBelow(limit: Int): Int {
-    TODO("Найдите максимальное N, для которого R < limit")
+     TODO()
 }
