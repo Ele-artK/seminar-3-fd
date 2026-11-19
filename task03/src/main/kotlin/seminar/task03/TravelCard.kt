@@ -9,7 +9,7 @@ class TravelCard(initialTrips: Int) {
     }
 
     fun topUp(trips: Int) {
-        requare(trips>0)
+        require(trips>0)
         remainingTrips+= trips
 
     }
