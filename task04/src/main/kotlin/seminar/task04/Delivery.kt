@@ -18,8 +18,8 @@ abstract class Delivery(
 class Pickup (destination: String)
        : Delivery(destination) {
     override fun cost(weightKg: Int): Int {
-        require(weightKg >= 0)
-        return 0
+        require(weightKg > 0)
+        return 200+50*weightKg
     }
 
 }
@@ -40,7 +40,7 @@ class ExpressDelivery(
     }
     override fun cost(weightKg: Int): Int {
         require(weightKg in 1..10)
-        require((weightKg >= 1) && (weightKg == 10 ))
+        require((weightKg >= 1) && (weightKg <= 10 ))
         return 300 + 80*weightKg + distance*20
     }
 }
