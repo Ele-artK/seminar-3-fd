@@ -9,7 +9,7 @@ abstract class Delivery(
 
     abstract fun cost(weightKg: Int): Int
 
-    fun label(weightKg: Int, destination: String): String {
+    fun label(weightKg: Int): String {
         val price = cost(weightKg)
         return "Доставка в $destination: $price"
     }
@@ -33,14 +33,15 @@ class CourierDelivery(destination: String)
 
 class ExpressDelivery(
     destination: String,
-    distance: Int
+    private val distance: Int
 ) : Delivery(destination) {
     init{
         require(distance > 0)
     }
     override fun cost(weightKg: Int): Int {
-        require(weightKg > 0)
-        return 300 + 50*weightKg
+        require(weightKg in 1..10)
+        require((weightKg >= 1) && (weightKg == 10 ))
+        return 300 + 80*weightKg + distance*20
     }
 }
 
