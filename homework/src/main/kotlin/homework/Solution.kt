@@ -30,15 +30,15 @@ class Book(
     }
 
     fun borrow(): Boolean {
-        if(isAvailable) return true
+        if(isAvailable) return false
         isAvailable = false
-        return false
+        return true
     }
 
     fun returnToLibrary(): Boolean {
-        if(isAvailable==false) return true
+        if(isAvailable) return false
         isAvailable = true
-        return false
+        return true
     }
     fun info():BookInfo{
         return BookInfo(title, author, genre)
@@ -60,7 +60,9 @@ class ConsoleNotifier : Notifier {
 
 class CountingNotifier : Notifier {
     var sentCount: Int =0
+    private set
     var lastMessage: String = ""
+    private set
 
     override fun send(message: String) {
         sentCount++
