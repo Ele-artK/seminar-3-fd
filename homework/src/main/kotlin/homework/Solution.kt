@@ -40,13 +40,12 @@ class Book(
         isAvailable = true
         return false
     }
-}
-
-data class BookInfo(val title: String, val author: String, val genre: Genre){
     fun info():BookInfo{
         return BookInfo(title, author, genre)
     }
 }
+
+data class BookInfo(val title: String, val author: String, val genre: Genre)
 
 
 
