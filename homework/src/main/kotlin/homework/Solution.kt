@@ -78,22 +78,22 @@ class Library(private val books: Array<Book>, private val notifier: Notifier) {
     }
 
     fun borrowBook(id: Int): Boolean {
-        TODO()
+        return false
     }
 
     fun returnBook(id: Int): Boolean {
-        TODO()
+        return false
     }
 
     fun availableCount(): Int {
-        TODO()
+        return 0
     }
 
     fun countByGenre(genre: Genre): Int {
-        TODO()
+        return books.count { it.genre == genre }
     }
 
     fun report(): String {
-        TODO()
+        return "Total Books: ${books.size}"
     }
 }
