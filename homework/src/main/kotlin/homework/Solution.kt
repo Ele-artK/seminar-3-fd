@@ -65,7 +65,7 @@ class CountingNotifier : Notifier {
     private set
 
     override fun send(message: String) {
-        sentCount++
+        sentCount = sentCount + 1
         lastMessage = message
     }
 }
