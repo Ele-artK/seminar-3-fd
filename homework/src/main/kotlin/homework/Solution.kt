@@ -30,7 +30,7 @@ class Book(
     }
 
     fun borrow(): Boolean {
-        if(isAvailable) return false
+        if(!isAvailable) return false
         isAvailable = false
         return true
     }
